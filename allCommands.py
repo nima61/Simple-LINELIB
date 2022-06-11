@@ -48,7 +48,7 @@ class Commands(object):
             elif opText.startswith("liff"):
                 self.laylay.sendMessage(opTo,"https://liff.line.me/1656820974-jwLYk4JB")
 
-                ############## TAGALL - MESSAGE ##############
+                ############## TAGALL - MESSAGE ############
                 
             elif opText.startswith("tagall"):
                 group=self.laylay.getChats([opTo]).chats[0].extra.groupExtra.memberMids;_mntmd=[]
@@ -57,16 +57,16 @@ class Commands(object):
                 for _mntmmbrs in range(_mdslct+1):
                     ret_='* Mention List *\n';_n=1;_dtmd=[]
                     for _dtmnt in _mntmd[_mntmmbrs*20:(_mntmmbrs+1)*20]:_dtmd.append(_dtmnt);ret_+='\n\n{}. @!\n'.format(str(_n));_n=_n+1
-                    ret_+='\n\n\n「 Toplam {} Kullanici 」'.format(str(len(_dtmd)));self.laylay.sendMention(opTo,ret_,_dtmd)
+                    ret_+='\n\n\n「 Toplam {} Kullanici 」'.format(str(len(_dtmd)));self.laylay.sendMention(opTo,ret_,_dtm
                 
-                ############## CANCELALL - FUNCTION ##############
+                ############## CANCELALL - FUNCTION #############
                 
             elif opText.startswith('laylaycancel'):
                 _m = self.laylay.getChats([opTo]).chats[0].extra.groupExtra.inviteeMids
                 _d = []
                 for i in _m:
                     _d.append(i)
-                    self.laylay.cancelChatInvitation(opTo,[i])
+                    self.laylay.cancelChatInvitation(opTo,[i
                     time.sleep(0.5)
                 self.laylay.sendMessage(opTo,f"Total {len(_d)} User Cancelled")
                 
@@ -75,7 +75,7 @@ class Commands(object):
             elif opText.startswith('laylayshut'):
                 _m = self.laylay.getChats([opTo]).chats[0].extra.groupExtra.memberMids
                 _d = []
-                for i in _m:
+                for i in _
                     _d.append(i)
                     if i != opFrom:
                       self.laylay.deleteOtherFromChat(opTo,[i])
@@ -84,7 +84,7 @@ class Commands(object):
                 
                 ############## BROADCAST - MESSAGE ##############
                 
-            elif opText.startswith("broadcast "):
+            elif opText.startswith("broadcast ")
                 _txt = len('' + 'broadcast') + 1
                 bcText = opText[_txt:]
                 if time.time()  - self.botData["LiffTokenTime"] > int(86400):
@@ -93,7 +93,7 @@ class Commands(object):
                     self.laylay.backupData()
                     print("True")
                 else:print("False")
-                for groups in self.laylay.getAllChatMids().memberChatMids:
+                for groups in self.laylay.getAllChatMids().memberChatMids
                     if groups not in self.botData["GroupLiffToken"]:
                         self.laylay.TokenSingle(groups)
                     limg = 'https://i.hizliresim.com/ts0xzxx.png'
@@ -102,7 +102,7 @@ class Commands(object):
                         "text": "{}".format(bcText),
                         "sentBy": {
                             "label": f"{self.laylay.profile.displayName }",
-                            "iconUrl": '%s'%limg,
+                            "iconUrl": '%s'%limg
                             "linkUrl": "line://nv/profilePopup/mid=u84e53963a1e708c353e4b16d932e0da0"
                         }
                     }
@@ -111,7 +111,7 @@ class Commands(object):
                     time.sleep(1)
                 self.laylay.sendMessage(opTo,"Tamamdir")
                
-                
+               
                 ############## UNSEND - MESSAGE ##############
                 
             elif opText.startswith('unsend'):
